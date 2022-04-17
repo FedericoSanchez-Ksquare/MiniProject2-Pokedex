@@ -6,7 +6,7 @@
 | ---------------- | :--: | ---: |
 | 1 The Pokedex must have a container with a grid of 4x3 cards   |     |      |
 | 2 The Pokedex must have a card where the information for each Pokémon must live inside   |      |     |
-| 3 The Pokémon card must use Flexbox  |  X   |      |
+| 3 The Pokémon card must use Flexbox  |     |      |
 | 4 The Pokémon card must contain the following information: "name", "sprite", "types", "attack value", "hp", "defense value", "speed value"   |     |      |
 | 5 You have to choose 12 Pokémon (this can be chosen at random if you aren't familiar with the franchise) and show them at load time  |     |      |
 | 6 As a user, I must be redirected to its Poke Wiki entry when I click the name inside the card  |     |      |
