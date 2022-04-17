@@ -27,6 +27,44 @@ body {
     gap: 20px;
     margin: auto;
 }
+.poke-search {
+    display: flex;
+    width: 20%;
+    height: 20%;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 8px solid yellow;
+}
+.poke-card {
+    width: 200px;
+    height: 90%;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 8px solid yellow;
+}
+.content {
+    background-color: rgba(96, 156, 184, 0.747);
+    border-radius: 20px;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+.content2 {
+    background-color: rgba(96, 156, 184, 0.747);
+    border-radius: 20px;
+    padding: 7px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
 
 .poke-search {
     display: flex;
