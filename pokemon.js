@@ -7,6 +7,8 @@ const pokeDefense = document.getElementById("poke-defenseValue");
 const pokeSpeed = document.getElementById("poke-speedValue");
 const pokemonID = document.querySelector(".aSelec");
 const pokeContainer = document.getElementById("poke-dex1");
+const test = document.getElementById("poke-card1");
+const test2 = document.getElementById("idTest");
 const pokeEl = document.querySelector(".test");
 
 const fetchPokemons = async (n) => {
@@ -77,6 +79,52 @@ const createPokeCard = (data) => {
   pokeContainer.appendChild(pokeEl);
 
   return;
+};
+
+const getPokemonData = async () => {
+  const pokemon = document.getElementById("pokemon").value;
+  if (pokemon === "" && pokemon.value === undefined) {
+    getPokemonDataRandom();
+  } else {
+    test.style.display = "block";
+    pokeContainer.style.display = "none";
+    let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    let data = await res.json();
+    let types = data.types;
+    pokeName.innerText = `${data.name}`;
+    pokeSprite.src = `${data.sprites.front_default}`;
+    if (types.length > 1 && types.length < 3) {
+      pokeTypes.innerText = `${data.types[0].type.name}, ${data.types[1].type.name}`;
+    } else {
+      pokeTypes.innerText = `${data.types[0].type.name}`;
+    }
+    pokeAttack.innerText = `${data.stats[1].base_stat}`;
+    pokeHp.innerText = `${data.stats[0].base_stat}`;
+    pokeDefense.innerText = `${data.stats[2].base_stat}`;
+    pokeSpeed.innerText = `${data.stats[5].base_stat}`;
+    pokemonID.href = `https:/www.wikidex.net/wiki/${pokemon}`;
+  }
+};
+
+const getPokemonDataRandom = async () => {
+  test.style.display = "block";
+  pokeContainer.style.display = "none";
+  let id = Math.floor(Math.random() * 200);
+  let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  let data = await res.json();
+  pokeName.innerText = `${data.name}`;
+  pokeSprite.src = `${data.sprites.front_default}`;
+  let types = data.types;
+  if (types.length > 1 && types.length < 3) {
+    pokeTypes.innerText = `${data.types[0].type.name}, ${data.types[1].type.name}`;
+  } else {
+    pokeTypes.innerText = `${data.types[0].type.name}`;
+  }
+  pokeAttack.innerText = `${data.stats[1].base_stat}`;
+  pokeHp.innerText = `${data.stats[0].base_stat}`;
+  pokeDefense.innerText = `${data.stats[2].base_stat}`;
+  pokeSpeed.innerText = `${data.stats[5].base_stat}`;
+  pokemonID.href = `https:/www.wikidex.net/wiki/${data.name}`;
 };
 
 fetchPokemons(12);
