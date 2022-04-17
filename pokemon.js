@@ -40,7 +40,7 @@ const createPokeCard = (data) => {
         
         <div class="container-name">
         
-            <a target="blank" class="name" href="" style="color: black; 
+            <a target="blank" class="name" href="https://www.wikidex.net/wiki/${name}" style="color: black; 
             text-decoration: none; text-transform: capitalize;"><h3>${name}</h3></a>
         </div>
         <div class="container-sprite">
