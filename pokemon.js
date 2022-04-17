@@ -26,6 +26,12 @@ const generatePokemon = async (id) => {
   }
 };
 
+const refresh = () => {
+  document.getElementById("pokemon").value = "";
+  test.style.display = "none";
+  pokeContainer.style.display = "";
+};
+
 const createPokeCard = (data) => {
   const { name, sprites, types, stats } = data;
   let type = data.types[0].type.name;
@@ -33,6 +39,7 @@ const createPokeCard = (data) => {
   pokeEl.classList.add("poke-card");
   pokeEl.classList.add("test");
   pokeEl.setAttribute("id", "idTest");
+  pokeEl.classList.add("visibility2");
 
   if (types.length > 1) {
     type = `${types[0].type.name}, ${types[1].type.name}`;
