@@ -5,7 +5,7 @@
 | User Stories                                                                                                                                      | Andres | Fede |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | :----: | ---: |
 | 1 The Pokedex must have a container with a grid of 4x3 cards                                                                                      |   X    |      |
-| 2 The Pokedex must have a card where the information for each Pokémon must live inside                                                            |        |      |
+| 2 The Pokedex must have a card where the information for each Pokémon must live inside                                                            |   X    |      |
 | 3 The Pokémon card must use Flexbox                                                                                                               |        |      |
 | 4 The Pokémon card must contain the following information: "name", "sprite", "types", "attack value", "hp", "defense value", "speed value"        |        |      |
 | 5 You have to choose 12 Pokémon (this can be chosen at random if you aren't familiar with the franchise) and show them at load time               |        |      |
