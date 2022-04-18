@@ -2,6 +2,8 @@
 
 #Pokedex
 
+## Andres Cervera & Federico Sanchez
+
 | User Stories                                                                                                                                      | Andres | Fede |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | :----: | ---: |
 | 1 The Pokedex must have a container with a grid of 4x3 cards                                                                                      |   X    |      |
@@ -13,3 +15,7 @@
 | 7 The Pokedex must include a search box where I can type the name of a Pokémon and its information must be the only Pokemon shown inside the grid |        |   X   |
 | 8 The Pokedex must include a clickable element that will reset the search value and return to the 12 Pokémon you initially show                   |        |    X  |
 | 9 The app should work and look fine in a 320px width viewport                                                                                     |   X    |      |
+
+
+
+## Demo: https://federicosanchez-ksquare.github.io/MiniProject2-Pokedex/
