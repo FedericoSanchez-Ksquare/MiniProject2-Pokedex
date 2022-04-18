@@ -128,3 +128,61 @@ img {
   width: 100%;
   height: 100%;
 }
+
+@media only screen and (max-width: 320px) {
+  .poke-dex {
+      display: grid;
+      grid-template-columns: auto auto;
+      width: auto;
+      font-size: 12px;
+
+  }
+
+  .poke-card {
+      width: auto;
+      height: 90%;
+      text-align: center;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 8px solid yellow;
+
+  }
+
+  .search-bar {
+      display: flex;
+      justify-items: center;
+      width: 90%;
+  }
+
+  button {
+      width: 90%;
+  }
+
+  .containerAlone {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      width: auto;
+      font-size: 12px;
+
+  }
+
+  .content2 {
+
+      font-size: 12px;
+  }
+
+  .content {
+
+      font-size: 12px;
+  }
+
+  .visibility {
+      display: none;
+  }
+
+  .visibility2 {
+      display: block;
+  }
+
+}
