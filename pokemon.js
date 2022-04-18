@@ -10,6 +10,7 @@ const pokeContainer = document.getElementById("poke-dex1");
 const test = document.getElementById("poke-card1");
 const test2 = document.getElementById("idTest");
 const pokeEl = document.querySelector(".test");
+const alone = document.querySelector(".poke-search");
 
 const fetchPokemons = async (n) => {
   for (let i = 1; i <= n; i++) {
@@ -45,18 +46,78 @@ const createPokeCard = (data) => {
     type = `${types[0].type.name}, ${types[1].type.name}`;
   }
 
+  switch (types[0].type.name) {
+    case "normal":
+      pokeEl.setAttribute("style", "background-color: #A8A77A;");
+      break;
+    case "fire":
+      pokeEl.setAttribute("style", "background-color: #EE8130;");
+      break;
+    case "water":
+      pokeEl.setAttribute("style", "background-color: #6390F0;");
+      break;
+    case "electric":
+      pokeEl.setAttribute("style", "background-color: #F7D02C;");
+      break;
+    case "grass":
+      pokeEl.setAttribute("style", "background-color: #7AC74C;");
+      break;
+    case "ice":
+      pokeEl.setAttribute("style", "background-color: #96D9D6;");
+      break;
+    case "fighting":
+      pokeEl.setAttribute("style", "background-color: #C22E28;");
+      break;
+    case "posion":
+      pokeEl.setAttribute("style", "background-color: #A33EA1;");
+      break;
+    case "ground":
+      pokeEl.setAttribute("style", "background-color: #E2BF65;");
+      break;
+    case "flying":
+      pokeEl.setAttribute("style", "background-color: #A98FF3;");
+      break;
+    case "psychic":
+      pokeEl.setAttribute("style", "background-color: #F95587;");
+      break;
+    case "bug":
+      pokeEl.setAttribute("style", "background-color: #A6B91A;");
+      break;
+    case "rock":
+      pokeEl.setAttribute("style", "background-color: #B6A136;");
+      break;
+    case "ghost":
+      pokeEl.setAttribute("style", "background-color: #735797;");
+      break;
+    case "dragon":
+      pokeEl.setAttribute("style", "background-color: #6F35FC;");
+      break;
+    case "dark":
+      pokeEl.setAttribute("style", "background-color: #705746;");
+      break;
+    case "steel":
+      pokeEl.setAttribute("style", "background-color: #B7B7CE;");
+      break;
+    case "fairy":
+      pokeEl.setAttribute("style", "background-color: #D685AD;");
+      break;
+  }
+
   const pokeInnerHtml = `
         
         <div class="container-name">
-        
+            <h3>
             <a target="blank" class="name" href="https://www.wikidex.net/wiki/${name}" style="color: black; 
-            text-decoration: none; text-transform: capitalize;"><h3>${name}</h3></a>
+            text-decoration: none; text-transform: capitalize;">${name}</a>
+            </h3>
         </div>
         <div class="container-sprite">
             <img class="sprite" src="${sprites.front_default}" >
         </div>
         <div class="container-types">
-            <span class="type" href="">${type}</span>
+            <b>
+            <span class="type" href="" style="text-transform: capitalize;">${type}</span>
+            </b>
         </div>
         <br>
         <div class="content">
@@ -89,14 +150,14 @@ const createPokeCard = (data) => {
 };
 
 const getPokemonData = async () => {
-  const pokemon = document.getElementById("pokemon").value;
+  const pokemon = document.getElementById("pokemon").value.toLowerCase();
+  let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+  let data = await res.json();
   if (pokemon === "" && pokemon.value === undefined) {
     getPokemonDataRandom();
   } else {
     test.style.display = "block";
     pokeContainer.style.display = "none";
-    let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    let data = await res.json();
     let types = data.types;
     pokeName.innerText = `${data.name}`;
     pokeSprite.src = `${data.sprites.front_default}`;
@@ -105,18 +166,75 @@ const getPokemonData = async () => {
     } else {
       pokeTypes.innerText = `${data.types[0].type.name}`;
     }
+
+    switch (types[0].type.name) {
+      case "normal":
+        alone.setAttribute("style", "background-color: #A8A77A;");
+        break;
+      case "fire":
+        alone.setAttribute("style", "background-color: #EE8130;");
+        break;
+      case "water":
+        alone.setAttribute("style", "background-color: #6390F0;");
+        break;
+      case "electric":
+        alone.setAttribute("style", "background-color: #F7D02C;");
+        break;
+      case "grass":
+        alone.setAttribute("style", "background-color: #7AC74C;");
+        break;
+      case "ice":
+        alone.setAttribute("style", "background-color: #96D9D6;");
+        break;
+      case "fighting":
+        alone.setAttribute("style", "background-color: #C22E28;");
+        break;
+      case "posion":
+        alone.setAttribute("style", "background-color: #A33EA1;");
+        break;
+      case "ground":
+        alone.setAttribute("style", "background-color: #E2BF65;");
+        break;
+      case "flying":
+        alone.setAttribute("style", "background-color: #A98FF3;");
+        break;
+      case "psychic":
+        alone.setAttribute("style", "background-color: #F95587;");
+        break;
+      case "bug":
+        alone.setAttribute("style", "background-color: #A6B91A;");
+        break;
+      case "rock":
+        alone.setAttribute("style", "background-color: #B6A136;");
+        break;
+      case "ghost":
+        alone.setAttribute("style", "background-color: #735797;");
+        break;
+      case "dragon":
+        alone.setAttribute("style", "background-color: #6F35FC;");
+        break;
+      case "dark":
+        alone.setAttribute("style", "background-color: #705746;");
+        break;
+      case "steel":
+        alone.setAttribute("style", "background-color: #B7B7CE;");
+        break;
+      case "fairy":
+        alone.setAttribute("style", "background-color: #D685AD;");
+        break;
+    }
     pokeAttack.innerText = `${data.stats[1].base_stat}`;
     pokeHp.innerText = `${data.stats[0].base_stat}`;
     pokeDefense.innerText = `${data.stats[2].base_stat}`;
     pokeSpeed.innerText = `${data.stats[5].base_stat}`;
-    pokemonID.href = `https:/www.wikidex.net/wiki/${pokemon}`;
+    pokemonID.href = `https:/www.wikidex.net/wiki/${data.name}`;
   }
 };
 
 const getPokemonDataRandom = async () => {
   test.style.display = "block";
   pokeContainer.style.display = "none";
-  let id = Math.floor(Math.random() * 200);
+  let id = Math.floor(Math.random() * 898);
   let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   let data = await res.json();
   pokeName.innerText = `${data.name}`;
@@ -127,6 +245,64 @@ const getPokemonDataRandom = async () => {
   } else {
     pokeTypes.innerText = `${data.types[0].type.name}`;
   }
+
+  switch (types[0].type.name) {
+    case "normal":
+      alone.setAttribute("style", "background-color: #A8A77A;");
+      break;
+    case "fire":
+      alone.setAttribute("style", "background-color: #EE8130;");
+      break;
+    case "water":
+      alone.setAttribute("style", "background-color: #6390F0;");
+      break;
+    case "electric":
+      alone.setAttribute("style", "background-color: #F7D02C;");
+      break;
+    case "grass":
+      alone.setAttribute("style", "background-color: #7AC74C;");
+      break;
+    case "ice":
+      alone.setAttribute("style", "background-color: #96D9D6;");
+      break;
+    case "fighting":
+      alone.setAttribute("style", "background-color: #C22E28;");
+      break;
+    case "posion":
+      alone.setAttribute("style", "background-color: #A33EA1;");
+      break;
+    case "ground":
+      alone.setAttribute("style", "background-color: #E2BF65;");
+      break;
+    case "flying":
+      alone.setAttribute("style", "background-color: #A98FF3;");
+      break;
+    case "psychic":
+      alone.setAttribute("style", "background-color: #F95587;");
+      break;
+    case "bug":
+      alone.setAttribute("style", "background-color: #A6B91A;");
+      break;
+    case "rock":
+      alone.setAttribute("style", "background-color: #B6A136;");
+      break;
+    case "ghost":
+      alone.setAttribute("style", "background-color: #735797;");
+      break;
+    case "dragon":
+      alone.setAttribute("style", "background-color: #6F35FC;");
+      break;
+    case "dark":
+      alone.setAttribute("style", "background-color: #705746;");
+      break;
+    case "steel":
+      alone.setAttribute("style", "background-color: #B7B7CE;");
+      break;
+    case "fairy":
+      alone.setAttribute("style", "background-color: #D685AD;");
+      break;
+  }
+
   pokeAttack.innerText = `${data.stats[1].base_stat}`;
   pokeHp.innerText = `${data.stats[0].base_stat}`;
   pokeDefense.innerText = `${data.stats[2].base_stat}`;

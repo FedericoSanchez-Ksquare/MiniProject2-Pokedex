@@ -11,24 +11,25 @@
 <body>
     <div class="general-container">
         <div class="search-bar">
-            <input id="pokemon" class="search" autocomplete="off" type="text">
+            <input id="pokemon" class="search" autocomplete="off" type="text" placeholder="Pokemon name or id">
             <button onclick="getPokemonData()"> Search</button>
             <button onclick="refresh()"> Reset</button>
         </div>
         <div class="containerAlone visibility" id="poke-card1">
             <div class=" poke-search">
                 <div class="container-name">
-                    <b><a target="blank" class="name aSelec" id="poke-name" href=""
-                        style="color: black; text-decoration: none; text-transform: capitalize;">
-    
-                    </a></b>
+                    <h3><a target="blank" class="name aSelec" id="poke-name" href=""
+                        style="color: black; text-decoration: none; text-transform: capitalize;">  
+                    </a></h3>
                 </div>
                 <div class="container-sprite">
                     <img class="sprite" id="poke-sprite" src="">
                 </div>
-            
+
                 <div class="container-types">
-                    <span class="type" id="poke-types" href="">type</span>
+                    <b>
+                    <span class="type" id="poke-types" href="" style="text-transform: capitalize;">type</span>
+                    </b>
                 </div>
                 <br>
                 <div class="content2">
