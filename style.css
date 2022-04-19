@@ -46,6 +46,16 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
   border: 8px solid yellow;
 }
+.randomPokemon{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  width: 70%;
+  
+}
 
 .search-bar {
   display: flex;
