@@ -171,7 +171,7 @@ const getPokemonData = async () => {
     pokeHp.innerText = `${data.stats[0].base_stat}`;
     pokeDefense.innerText = `${data.stats[2].base_stat}`;
     pokeSpeed.innerText = `${data.stats[5].base_stat}`;
-    pokemonID.href = `https:/www.wikidex.net/wiki/${data.name}`;
+    pokemonID.href = `https://www.wikidex.net/wiki/${data.name}`;
   }
 };
 
@@ -196,7 +196,7 @@ const getPokemonDataRandom = async () => {
   pokeHp.innerText = `${data.stats[0].base_stat}`;
   pokeDefense.innerText = `${data.stats[2].base_stat}`;
   pokeSpeed.innerText = `${data.stats[5].base_stat}`;
-  pokemonID.href = `https:/www.wikidex.net/wiki/${data.name}`;
+  pokemonID.href = `https://www.wikidex.net/wiki/${data.name}`;
 };
 
 function backgroundTypes(types) {
